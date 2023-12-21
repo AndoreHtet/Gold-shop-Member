@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/s02-backend/member-api/src/main/java/com/jdc/shop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/s02-backend/member-api/target/classes/com/jdc/shop" vcs="Git" />
   </component>
 </project>
