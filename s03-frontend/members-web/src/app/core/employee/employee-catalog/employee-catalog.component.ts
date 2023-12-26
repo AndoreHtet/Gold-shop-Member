@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogSearch } from '../../../utils/apis/model/sample-data';
 import { RouterModule } from '@angular/router';
 import { NoDataComponent } from '../../../utils/widgets/no-data/no-data.component';
 import { CommonModule } from '@angular/common';
 import { EmployeeCatalogService } from '../../../utils/apis/services/employee-catalog.service';
 import { EmployeeCategoryService } from '../../../utils/apis/services/employee-category.service';
-import { CategoryNamePipe } from '../../../utils/pipe/category-name.pipe';
+import { GoldWeightPipe } from '../../../utils/pipe/gold-weight.pipe';
+import { PaginationComponent } from '../../../utils/widgets/pagination/pagination.component';
+import { ApiImagePipe } from '../../../utils/pipe/api-image.pipe';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, RouterModule, NoDataComponent, CategoryNamePipe],
+  imports: [CommonModule, RouterModule, NoDataComponent, PaginationComponent, GoldWeightPipe, ApiImagePipe],
   templateUrl: './employee-catalog.component.html'
 })
 export class EmployeeCatalogComponent implements OnInit {
 
+  sizes = [8, 12, 16]
   params = {
-    id: 0,
+    categoryId: 0,
     name: '',
     createFrom: '',
     priceFrom: 0,
     priceTo: 0,
+    soldOut: false,
     page: 0,
-    size: 10
+    size: 8
   }
 
   categories: any[] = []
